@@ -1,0 +1,21 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        {% extends "base.html" %}
+{% block title %}Track Order{% endblock %}
+
+{% block content %}
+<h2 class="text-center my-5">Track Your Order</h2>
+<form method="POST" action="/track_order" class="text-center">
+  <input type="text" name="order_number" placeholder="Enter Order Number" class="form-control mb-3" required>
+  <button type="submit" class="btn btn-primary">Track Order</button>
+</form>
+{% endblock %}
+
+    </body>
+</html>

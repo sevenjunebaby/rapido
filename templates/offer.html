@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rapido - Home Delivery Service</title>
+  
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <!-- Font Awesome for scooter icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    /* Navbar Logo Styling */
+    .navbar-brand {
+      display: inline-block;
+      height: 60px;
+      width: 120px;
+      background: url('/static/images/IMG_7512.jpg') no-repeat center center;
+      background-size: contain; /* Ensures the image scales properly */
+    }
+
+    .hero-section {
+      background: url('/static/images/IMG_7511.jpg') no-repeat center center/cover;
+      height: 100vh;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .btn-order {
+      background-color: #ff6f61;
+      border: none;
+    }
+
+    footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    
+    .offer-details {
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#"></a> <!-- Now the logo image will display properly -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Track Order</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-text">
+      <h1>Fast & Fresh Delivery</h1>
+      <p>Get your favorite food delivered straight to your door.</p>
+      <a href="offer.html" class="btn btn-order btn-lg text-white">Order Now</a>
+    </div>
+  </section>
+
+  <!-- Offer Details Section -->
+  <div class="container my-5">
+    <h2 class="text-center mb-5">Special Offers</h2>
+    <div id="offer-details"></div> <!-- This is where the offers will be displayed -->
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Rapido Delivery Service. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Bootstrap JS and Dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+  <!-- Your Custom Script -->
+  <script>
+    $(document).ready(function() {
+      const offers = {
+        "offers": [
+          {
+            "restaurant_name": "Pizza Place",
+            "image_url": "https://via.placeholder.com/300",
+            "description": "Delicious cheese pizza with fresh ingredients.",
+            "price": 10,
+            "reviews": "★★★★☆",
+            "phone_number": "123-456-7890"
+          },
+          {
+            "restaurant_name": "Burger Joint",
+            "image_url": "https://via.placeholder.com/300",
+            "description": "Juicy burgers with a variety of toppings.",
+            "price": 12,
+            "reviews": "★★★★★",
+            "phone_number": "098-765-4321"
+          }
+        ]
+      };
+
+      offers.offers.forEach(function(offer) {
+        const offerDiv = `
+          <div class="offer-details">
+            <h4>Offer from: ${offer.restaurant_name}</h4>
+            <img src="${offer.image_url}" alt="Offer Image" style="max-width: 300px;">
+            <p>${offer.description}</p>
+            <p>Price: $${offer.price}</p>
+            <p>Reviews: ${offer.reviews}</p>
+            <p>Call: ${offer.phone_number}</p>
+          </div>
+          <hr>
+        `;
+        $('#offer-details').append(offerDiv);
+      });
+    });
+  </script>
+</body>
+</html>

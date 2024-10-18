@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Order Now{% endblock %}
+
+{% block content %}
+<h2 class="text-center my-5">Today's Offers & Menu</h2>
+<div class="row">
+  <div class="col-md-6">
+    <h4>Restaurant Menu</h4>
+    <ul>
+      <li>Pizza - $10</li>
+      <li>Burger - $8</li>
+      <li>Pasta - $12</li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <h4>Groceries Delivery</h4>
+    <ul>
+      <li>Milk - $2</li>
+      <li>Bread - $1</li>
+      <li>Fruits - $5</li>
+    </ul>
+  </div>
+</div>
+
+<h4 class="mt-5">Payment Options</h4>
+<form method="POST" action="/payment">
+  <div class="form-group">
+    <label for="payment">Select Payment Method:</label>
+    <select class="form-control" id="payment" name="payment_method">
+      <option>Credit Card</option>
+      <option>PayPal</option>
+      <option>Cash on Delivery</option>
+    </select>
+  </div>
+  <button type="submit" class="btn btn-success">Place Order</button>
+</form>
+{% endblock %}
